@@ -11,4 +11,12 @@ python scheduler.py
 
 ~~~
 from warmup_scheduler.scheduler import GradualWarmupScheduler
+
+v = torch.zeros(10)
+optim = torch.optim.SGD([v], lr=0.01)
+cosine_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optim, 100, eta_min=0, last_epoch=-1)
+scheduler = GradualWarmupScheduler(optim, multiplier=8, total_epoch=5, after_scheduler=cosine_scheduler)
+for epoch in range(1, 100): 
+    scheduler.step(epoch)
+    
 ~~~
