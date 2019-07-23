@@ -24,8 +24,10 @@ for epoch in range(1, 100):
 ~~~
 ## note!!!!
 
-**max_epoch = 100**
+**max_epoch = num**
 
 for epoch in range(1, **max_epoch**):
 
 cosine_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optim, **max_epoch**, eta_min=0, last_epoch=-1)
+
+**To change the epoch, change all of the highlighted text.**
