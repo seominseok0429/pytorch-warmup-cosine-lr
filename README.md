@@ -20,3 +20,10 @@ for epoch in range(1, 100):
     scheduler.step(epoch)
     
 ~~~
+## note!!!!
+
+**max_epoch = 100**
+
+for epoch in range(1, **max_epoch**):
+
+cosine_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optim, **max_epoch**, eta_min=0, last_epoch=-1)
